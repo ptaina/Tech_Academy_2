@@ -1,0 +1,42 @@
+
+$primary: #00FF00;
+$secundary: #000000;
+$tertiary:#333333;
+$quartiary: #fff;
+$clear: #f2f2f2;
+$font1: Oswald, Arial, Verdana;
+$font2: "Roboto Slab", Arial, Verdana;
+
+
+.navbar {
+    background: $secundary !important;
+    & .nav-link {
+        color: $quartiary !important;
+    }
+}
+.navbar-brand {
+    img {
+        width: 60px;
+    
+    }
+    font-family: $font2 ;
+}
+
+.d-flex {
+    
+    color: $secundary !important;
+    a:hover {
+        color: $tertiary !important;
+    }
+    
+}
+
+
+body {
+    background: $tertiary !important;
+}
+
+.btn-success {
+    background-color: #00FF00 !important;
+}
+

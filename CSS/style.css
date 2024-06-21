@@ -1,0 +1,30 @@
+.navbar {
+  background: #000000 !important;
+}
+.navbar .nav-link {
+  color: #fff !important;
+}
+
+.navbar-brand {
+  font-family: "Roboto Slab", Arial, Verdana;
+}
+.navbar-brand img {
+  width: 60px;
+}
+
+.d-flex {
+  color: #000000 !important;
+}
+.d-flex a:hover {
+  color: #333333 !important;
+}
+
+body {
+  background: #333333 !important;
+}
+
+.btn-success {
+  background-color: #00FF00 !important;
+}
+
+/*# sourceMappingURL=style.css.map */
