@@ -2,43 +2,138 @@ $primary: #00FF00;
 $secundary: #000000;
 $tertiary: #333333;
 $quartiary: #fff;
+$quintenary: #0b081a;
 $clear: #f2f2f2;
 $font1: Oswald, Arial, Verdana;
 $font2: "Roboto Slab", Arial, Verdana;
 
 
 .navbar {
-    background: $secundary !important;
+    background-color: $secundary !important;
 
-    & .nav-link {
-        color: $quartiary !important;
+    .navbar-brand {
+        img {
+            width: 60px;
+        }
+
+        strong {
+            font-family: $font2;
+            color: $quartiary;
+        }
+    }
+
+    .navbar-nav {
+        .nav-item {
+            .nav-link {
+                color: $quartiary !important;
+
+                &:hover {
+                    color: $primary !important;
+                }
+            }
+        }
+
+        .dropdown-menu {
+            .dropdown-item {
+                color: $quartiary !important;
+
+                &:hover {
+                    background-color: $primary;
+                    color: $secundary !important;
+                }
+            }
+        }
     }
 }
 
-.navbar-brand {
-    img {
-        width: 60px;
 
-    }
-
-    font-family: $font2 ;
-}
-
-.d-flex {
-
+.btn-entrar {
+    background-color: #00FF00 !important;
     color: $secundary !important;
+    border-color: #00FF00 !important;
 
-    a:hover {
-        color: $tertiary !important;
+    &:hover {
+        background-color: #00CC00 !important;
+        border-color: #00CC00 !important;
+        color: $secundary !important;
     }
-
 }
 
+
+.carousel-caption {
+
+    position: absolute;
+    top: 53%;
+    left: 45%;
+    text-align: center;
+
+    h3 {
+        font-family: $font2;
+        font-size: 3rem;
+        color: $quintenary;
+    }
+
+    p {
+        font-family: $font2;
+        font-size: 2rem;
+        color: $quintenary;
+    }
+
+
+    @media (max-width: 767.98px) {
+        position: static;
+        top: auto;
+        left: auto;
+        transform: none;
+        text-align: center;
+
+        h3 {
+            font-size: 15px;
+            color: $quintenary;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 10px;
+            color: $quintenary;
+            margin-bottom: 5px;
+        }
+    }
+}
 
 body {
     background: $tertiary !important;
 }
 
-.btn-success {
-    background-color: #00FF00 !important;
+.footer {
+    padding: 20px 0;
+    font-size: 14px; 
+    text-align: center; 
+    background-color: $secundary !important; 
+
+    p {
+        margin-bottom: 10px;
+    }
+
+    .social-icons {
+        margin-top: 10px;
+        text-align: center; 
+
+        .social-icon {
+            display: inline-block;
+            margin: 0 10px; 
+            vertical-align: middle; 
+
+            img {
+                width: 30px;
+                height: auto;
+            }
+        }
+    }
+
+    @media (max-width: 767.98px) {
+        .social-icons {
+            margin-top: 0; 
+        }
+    }
 }

@@ -58,60 +58,55 @@
                   <li><a class="dropdown-item" href="Jogo3">Jogo 3</a></li>
                   <li><a class="dropdown-item" href="Jogo4">Jogo 4</a></li>
                   <li><a class="dropdown-item" href="Jogo5">Jogo 5</a></li>
-                  <li>
-                    <hr class="dropdown-divider">
-                  </li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+
                 </ul>
               </li>
             </ul>
-            <a href="#" class="btn btn-success"> Entrar </a>
+            <a href="#" class="btn btn-success btn-entrar"> Entrar </a>
           </div>
         </div>
     </nav>
   </header>
 
 
-  <main>
 
-    <?php
-    if (isset($_GET["param"])) {
-      $param = $_GET["param"];
-      // separar por parametro por /
-      $p = explode("/", $param);
-      // print_r($p);
-    }
+  <?php
+  $pagina = isset($_GET["pagina"]) ? $_GET["pagina"] : "home";
+  $pagina = "paginas/{$pagina}.php";
 
-    $page = $p[0] ?? "home";
-    $Jogos = $p[1] ?? "NULL";
-
-    if ($page == "Jogos") {
-      $pagina = "Jogos/{$Jogos}.php";
-
-    } else {
-      $pagina = "paginas/{$page}.php";
-
-    }
-
-    //verifcar se a pagina existe 
-    
-    if (file_exists($pagina)) {
-      include $pagina;
-
-    } else {
-      include "paginas/erro.php";
-
-    }
-
-
-    ?>
+  if (file_exists($pagina)) {
+    include $pagina;
+  } else {
+   
+    include "paginas/erro.php";
+  }
+  ?>
 
 
 
-  </main>
-
-
-  <footer class="footer"></footer>
+  <footer class="footer bg-dark text-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p>Todos os direitos reservados - Tainá Trindade®</p>
+        </div>
+        <div class="col-md-6">
+          <div class="social-icons text-end">
+            <a href="https://wa.me/qr/IU47YEHU2HBLK1" class="social-icon">
+              <img src="imagens/wpp_png.png" alt="WhatsApp">
+            </a>
+            <a href="https://www.instagram.com/taitrindade_27?igsh=MWlyeGN1NTF6dmZneQ==" class="social-icon">
+              <img src="imagens/insta_png.png" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/taina.pereira.355744?mibextid=ZbWKwL" class="social-icon">
+              <img src="imagens/face_png.png" alt="Facebook">
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

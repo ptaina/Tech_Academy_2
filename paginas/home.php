@@ -13,20 +13,18 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="imagens/banner_espacial.webp" class="d-block w-100" alt="Banner espacial">
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption">
+                    <h3><strong>Bem-vindos à NerdGames</strong></h3>
+                    <p><strong>Onde o jogo é a sua recompensa!</strong></p>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="imagens/banner_endlessrunner.webp" class="d-block w-100" alt="Banner endless runner">
-                <div class="carousel-caption d-none d-md-block">
 
-                </div>
             </div>
             <div class="carousel-item">
                 <img src="imagens/banner_acao.webp" class="d-block w-100" alt="Banner Ação">
-                <div class="carousel-caption d-none d-md-block">
 
-                </div>
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
