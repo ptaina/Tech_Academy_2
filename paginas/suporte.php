@@ -1,10 +1,10 @@
-<div class="container mt-5">
-    <h1>Suporte NerdGames</h1>
-    <br>
-    <p>Por favor, informe seu e-mail e descreva o problema que está enfrentando clicando no botão abaixo. </p>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#supportModal">Abrir Formulário de Suporte</button>
+<div class="suporte">
+  <div class="container mt-5">
+    <h2>Suporte NerdGames</h2>
+    <p>Por favor, informe seu e-mail e descreva o problema que está enfrentando clicando no botão abaixo.</p>
+    <button type="button" class="btn btn-primary btn-abrir" data-bs-toggle="modal"
+      data-bs-target="#supportModal">Abrir</button>
   </div>
-
   <div class="modal fade" id="supportModal" tabindex="-1" aria-labelledby="supportModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -31,3 +31,4 @@
       </div>
     </div>
   </div>
+</div>

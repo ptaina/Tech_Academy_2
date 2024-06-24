@@ -1,3 +1,7 @@
+header {
+  margin-bottom: auto;
+}
+
 .navbar {
   background-color: #000000 !important;
 }
@@ -70,21 +74,37 @@
 }
 
 body {
-  background: #333333 !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #333333 !important;
 }
 
 .footer {
-  padding: 20px 0;
+  padding: 40px 0;
   font-size: 14px;
   text-align: center;
   background-color: #000000 !important;
+  position: relative;
+  color: #fff;
 }
 .footer p {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
 }
 .footer .social-icons {
   margin-top: 10px;
   text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
 }
 .footer .social-icons .social-icon {
   display: inline-block;
@@ -98,6 +118,297 @@ body {
 @media (max-width: 767.98px) {
   .footer .social-icons {
     margin-top: 0;
+  }
+}
+
+h2 {
+  text-align: center;
+  font-size: 16px;
+  font-family: "Roboto Slab", Arial, Verdana;
+  text-transform: uppercase;
+  color: #fff !important;
+  margin-top: 20px !important;
+}
+
+.card-body {
+  background-color: #0b081a !important;
+}
+
+.card-title {
+  color: #fff !important;
+  font-family: "Roboto Slab", Arial, Verdana !important;
+}
+
+.card-text {
+  color: #fff !important;
+  font-family: "Roboto Slab", Arial, Verdana;
+}
+
+.btn-primary {
+  background-color: #0b081a !important;
+  border-color: #fff !important;
+}
+.btn-primary:hover {
+  background-color: #333333 !important;
+}
+
+.btn-success {
+  background-color: #00FF00 !important;
+  color: #000000 !important;
+}
+.btn-success:hover {
+  background-color: #00CC00 !important;
+}
+
+.card-2 .container .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card-2 .container .row .col-md-2 {
+  display: flex;
+  flex-direction: column;
+}
+.card-2 .container .row .col-md-2 .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  margin-bottom: 1rem;
+}
+.card-2 .container .row .col-md-2 .card .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-2 .container .row .col-md-2 .card .card-body .btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.suporte {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  border: 2px solid #00FF00;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+}
+.suporte h2,
+.suporte p {
+  font-family: "Roboto Slab", Arial, Verdana;
+  text-align: center;
+  margin: 0 auto;
+}
+.suporte h2 {
+  color: #00CC00 !important;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+.suporte p {
+  color: #fff !important;
+  margin-bottom: 20px;
+}
+.suporte .btn-abrir {
+  display: block;
+  margin: 0 auto 20px;
+  background-color: #00FF00 !important;
+  color: #000000 !important;
+  border: none;
+  padding: 10px 20px;
+}
+.suporte .btn-abrir:hover {
+  background-color: #00CC00 !important;
+}
+.suporte .btn-secondary {
+  background: #333333 !important;
+}
+.suporte .btn-secondary:hover {
+  color: #000000;
+}
+.suporte .btn-primary {
+  background: #00FF00 !important;
+  color: #000000;
+}
+@media (max-width: 768px) {
+  .suporte {
+    padding: 10px;
+  }
+  .suporte h2 {
+    font-size: 2rem;
+  }
+  .suporte p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  .suporte .btn-abrir {
+    margin-bottom: 50px;
+    padding: 8px 16px;
+  }
+}
+@media (max-width: 480px) {
+  .suporte {
+    padding: 5px;
+  }
+  .suporte h2 {
+    font-size: 1.5rem;
+  }
+  .suporte p {
+    font-size: 0.9rem;
+  }
+  .suporte .btn-abrir {
+    padding: 6px 12px;
+  }
+}
+
+.entrar {
+  border: 2px solid #00FF00;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  text-decoration: none;
+}
+.entrar h2 {
+  color: #00CC00 !important;
+}
+.entrar p {
+  font-family: "Roboto Slab", Arial, Verdana;
+  color: #00FF00;
+}
+.entrar .btn-darken {
+  border: none;
+  background-color: #00FF00 !important;
+}
+.entrar .btn-darken:hover {
+  background: #00CC00 !important;
+}
+
+.cadastro {
+  border: 2px solid #00FF00;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  text-decoration: none;
+}
+.cadastro h2 {
+  color: #00CC00 !important;
+}
+.cadastro p {
+  font-family: "Roboto Slab", Arial, Verdana;
+  color: #00FF00;
+}
+.cadastro .btn-darken {
+  border: none;
+  background-color: #00FF00 !important;
+}
+.cadastro .btn-darken:hover {
+  background: #00CC00 !important;
+}
+
+.resetSenha {
+  border: 2px solid #00FF00;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  text-decoration: none;
+}
+.resetSenha h3 {
+  color: #00CC00;
+}
+.resetSenha h2 {
+  color: #00CC00 !important;
+}
+.resetSenha p {
+  font-family: "Roboto Slab", Arial, Verdana;
+  color: #00FF00;
+}
+.resetSenha .btn-darken {
+  border: none;
+  background-color: #00FF00 !important;
+}
+.resetSenha .btn-darken:hover {
+  background: #00CC00 !important;
+}
+
+.jogos h2 {
+  text-align: center;
+  font-family: "Roboto Slab", Arial, Verdana;
+  color: #00FF00;
+  margin-bottom: 20px;
+  color: #00CC00 !important;
+}
+.jogos .content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid #00FF00;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+}
+.jogos .content .image-container,
+.jogos .content .text-container {
+  flex: 1;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+}
+.jogos .content .image-container {
+  max-width: 300px;
+}
+.jogos .content .image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.jogos .content .text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.jogos .content .text-container p {
+  font-family: "Roboto Slab", Arial, Verdana;
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+.jogos .content .text-container .btn {
+  background-color: #00FF00;
+  color: #000000;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+}
+.jogos .content .text-container .btn:hover {
+  background-color: #00cc00;
+}
+@media (max-width: 768px) {
+  .jogos .content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .jogos .content .image-container,
+  .jogos .content .text-container {
+    margin: 10px 0;
+    max-width: 100%;
+  }
+  .jogos .content .image-container {
+    max-width: 80%;
+  }
+  .jogos .text-container p {
+    font-size: 0.9rem;
+  }
+  .jogos .text-container .btn {
+    padding: 8px 16px;
   }
 }
 

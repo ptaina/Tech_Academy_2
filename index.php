@@ -17,6 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -44,7 +45,7 @@
                 Jogos
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="?pagina=curse_game">Curse Game</a></li>
+                <li><a class="dropdown-item" href="?pagina=curse_game">Cursed Game</a></li>
                 <li><a class="dropdown-item" href="?pagina=tommy">Tommy Adeventure</a></li>
                 <li><a class="dropdown-item" href="?pagina=rocket">Rocket On The Rocks</a></li>
                 <li><a class="dropdown-item" href="?pagina=bug">Bug From Hell 2.0</a></li>
@@ -52,7 +53,7 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a href="#" class="btn btn-success btn-entrar"> Entrar </a>
+              <a href="?pagina=entrar" class="btn btn-success btn-entrar"> Entrar </a>
             </li>
           </ul>
         </div>
@@ -99,35 +100,37 @@
     </div>
   </div>
 
-  <?php
-  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-    if (isset($_POST['email']) && isset($_POST['descricao'])) {
-      $email = $_POST['email'];
-      $descricao = $_POST['descricao'];
-
-
-      $email_destino = 'tainaelias90z@gmail.com';
-      $assunto = "Novo Problema Reportado";
-      $mensagem = $descricao;
-      $cabecalhos = "From: $email";
-
-      if (mail($email_destino, $assunto, $mensagem, $cabecalhos)) {
-        echo "Obrigado por enviar sua solicitação de suporte. Nós entraremos em contato em breve.";
+  <main>
+    <?php
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      if (isset($_POST['email']) && isset($_POST['descricao'])) {
+        $email = $_POST['email'];
+        $descricao = $_POST['descricao'];
+        $email_destino = 'tainaelias90z@gmail.com';
+        $assunto = "Novo Problema Reportado";
+        $mensagem = $descricao;
+        $cabecalhos = "From: $email";
+        if (
+          mail(
+            $email_destino,
+            $assunto,
+            $mensagem,
+            $cabecalhos
+          )
+        ) {
+          echo "Obrigado por enviar sua solicitação de suporte. Nós entraremos em contato em breve.";
+        } else {
+          echo "Houve um problema ao enviar seu email. Por favor, tente novamente mais tarde.";
+        }
       } else {
-        echo "Houve um problema ao enviar seu email. Por favor, tente novamente mais tarde.";
+        echo "Por favor, preencha todos os campos do formulário.";
       }
-
     } else {
-
-      echo "Por favor, preencha todos os campos do formulário.";
+      "Método de requisição inválido.";
     }
-  } else {
 
-    "Método de requisição inválido.";
-  }
-  ?>
-
+    ?>
+  </main>
 
   <footer class="footer bg-dark text-light">
     <div class="container">
@@ -155,6 +158,11 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>
