@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nerd Games</title>
 
+  <base href="http://localhost/Tech_Academy_2/">
+
   <link rel="stylesheet" href="CSS/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" href="imagens/nerdgames-log.png.png">
