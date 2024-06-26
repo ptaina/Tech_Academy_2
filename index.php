@@ -9,15 +9,45 @@
   <link rel="stylesheet" href="CSS/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" href="imagens/nerdgames-log.png.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init({
+        publicKey: "OWlmA7NIHGXqcKGIQ"
+      });
+    })();
+
+    window.onload = function () {
+
+      var supportLink = document.getElementById('supportLink');
+      supportLink.addEventListener('click', function (event) {
+        event.preventDefault();
+        var myModal = new bootstrap.Modal(document.getElementById('supportModal'));
+        myModal.show();
+      });
+
+
+      document.getElementById('supportForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        emailjs.sendForm('service_f49h6ts', 'template_at6opvq', this)
+          .then(function (response) {
+            console.log('SUCCESS!', response.status, response.text);
+            alert('Mensagem enviada com sucesso!');
+            var myModal = bootstrap.Modal.getInstance(document.getElementById('supportModal'));
+            myModal.hide();
+          }, function (error) {
+            console.log('FAILED...', error);
+            alert('O envio da mensagem falhou. Por favor, tente novamente mais tarde.');
+          });
+      });
+    }
+  </script>
 </head>
 
 <body>
@@ -25,7 +55,8 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="?pagina=home">
-          <img src="imagens/nerdgames-log.png.png" alt="Nerd Games"> <strong>Nerd Games </strong>
+          <img src="imagens/nerdgames-log.png.png" alt="Nerd Games" style="width: 40px; !important"> <strong>Nerd Games
+          </strong>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,7 +68,7 @@
               <a class="nav-link active" aria-current="page" href="?pagina=home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="?pagina=suporte">Suporte</a>
+              <a id="supportLink" class="nav-link" href="?pagina=suporte">Suporte</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -61,40 +92,31 @@
     </nav>
   </header>
 
-  <?php
-  $pagina = isset($_GET["pagina"]) ? $_GET["pagina"] : "home";
-  $pagina = "paginas/{$pagina}.php";
 
-  if (file_exists($pagina)) {
-    include $pagina;
-  } else {
-    include "paginas/erro.php";
-  }
-  ?>
-
-  <!-- só pra eu lembrar que aqui é o modal -->
-  <div class="modal fade" id="supportModal" tabindex="-1" aria-labelledby="supportModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="supportModalLabel">Suporte</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form id="supportForm" action="processa_suporte.php" method="POST">
-            <div class="mb-3">
-              <label for="user-email" class="col-form-label">Email:</label>
-              <input type="email" class="form-control" id="user-email" name="email" required>
-            </div>
-            <div class="mb-3">
-              <label for="problem-description" class="col-form-label">Descrição do Problema:</label>
-              <textarea class="form-control" id="problem-description" name="descricao" required></textarea>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-              <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
-            </div>
-          </form>
+  <div class="suporte">
+    <div class="modal fade" id="supportModal" tabindex="-1" aria-labelledby="supportModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="supportModalLabel">Suporte</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="supportForm">
+              <div class="mb-3">
+                <label for="user-email" class="col-form-label">Email:</label>
+                <input type="email" class="form-control" id="user-email" name="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="problem-description" class="col-form-label">Descrição do Problema:</label>
+                <textarea class="form-control" id="problem-description" name="message" required></textarea>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -102,33 +124,14 @@
 
   <main>
     <?php
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-      if (isset($_POST['email']) && isset($_POST['descricao'])) {
-        $email = $_POST['email'];
-        $descricao = $_POST['descricao'];
-        $email_destino = 'tainaelias90z@gmail.com';
-        $assunto = "Novo Problema Reportado";
-        $mensagem = $descricao;
-        $cabecalhos = "From: $email";
-        if (
-          mail(
-            $email_destino,
-            $assunto,
-            $mensagem,
-            $cabecalhos
-          )
-        ) {
-          echo "Obrigado por enviar sua solicitação de suporte. Nós entraremos em contato em breve.";
-        } else {
-          echo "Houve um problema ao enviar seu email. Por favor, tente novamente mais tarde.";
-        }
-      } else {
-        echo "Por favor, preencha todos os campos do formulário.";
-      }
-    } else {
-      "Método de requisição inválido.";
-    }
+    $pagina = isset($_GET["pagina"]) ? $_GET["pagina"] : "home";
+    $pagina = "paginas/{$pagina}.php";
 
+    if (file_exists($pagina)) {
+      include $pagina;
+    } else {
+      include "paginas/erro.php";
+    }
     ?>
   </main>
 
@@ -154,6 +157,7 @@
       </div>
     </div>
   </footer>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

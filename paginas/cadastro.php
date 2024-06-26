@@ -5,17 +5,23 @@
         <div>
             <form class="">
                 <div class="mb-3">
-                    <label for="exampleDropdownFormEmail1" class="form-label"><p>Email:</p></label>
+                    <label for="exampleDropdownFormEmail1" class="form-label">
+                        <p>Email:</p>
+                    </label>
                     <input type="email" class="form-control" id="exampleDropdownFormEmail1"
                         placeholder="email@exemplo.com">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleDropdownFormPassword1" class="form-label"><p>Senha:</p></label>
+                    <label for="exampleDropdownFormPassword1" class="form-label">
+                        <p>Senha:</p>
+                    </label>
                     <input type="password" class="form-control" id="exampleDropdownFormPassword1"
                         placeholder="Digite sua senha">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleDropdownFormPassword1" class="form-label"><p>Repita sua senha:</p></label>
+                    <label for="exampleDropdownFormPassword1" class="form-label">
+                        <p>Repita sua senha:</p>
+                    </label>
                     <input type="password" class="form-control" id="exampleDropdownFormPassword1"
                         placeholder="Digite sua senha">
                 </div>
@@ -27,13 +33,13 @@
                         </label>
 
                     </div>
-                    <a class="textLinks" href="?pagina=entrar"><p>Já tem uma conta? Entrar</p></a>
+                    <a class="textLinks" href="?pagina=entrar">
+                        <p>Já tem uma conta? Entrar</p>
+                    </a>
                 </div>
                 <button type="button" class="btn btn-light mt-1 btn-darken" data-bs-toggle="modal"
                     data-bs-target="#exampleModal">Cadastrar</button>
 
-
-                <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog">
@@ -47,7 +53,8 @@
                                 <h5>Deseja prosseguir com o cadastro?</h5>
                             </div>
                             <div class="modal-footer">
-                                <a href="?pagina=entrar" type="submit" class="btn btn-light btn-darken ">Confirmar Cadastro</a>
+                                <a href="?pagina=entrar" type="submit" class="btn btn-light btn-darken ">Confirmar
+                                    Cadastro</a>
                             </div>
                         </div>
                     </div>
@@ -56,7 +63,6 @@
             </form>
 
         </div>
-
 
     </div>
 

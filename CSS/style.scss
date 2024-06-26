@@ -247,47 +247,7 @@ h2 {
 }
 
 .suporte {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    border: 2px solid $primary;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px 0;
-
-    h2,
-    p {
-        font-family: $font2;
-        text-align: center;
-        margin: 0 auto;
-    }
-
-    h2 {
-        color: #00CC00 !important;
-        font-size: 3rem;
-        margin-bottom: 20px;
-    }
-
-    p {
-        color: $quartenary !important;
-        margin-bottom: 20px;
-    }
-
-    .btn-abrir {
-        display: block;
-        margin: 0 auto 20px;
-        background-color: #00FF00 !important;
-        color: #000000 !important;
-        border: none;
-        padding: 10px 20px;
-
-        &:hover {
-            background-color: #00CC00 !important;
-        }
-    }
-
+    
     .btn-secondary {
         background: #333333 !important;
 
@@ -301,40 +261,6 @@ h2 {
         color: #000000;
     }
 
-
-    @media (max-width: 768px) {
-        padding: 10px;
-
-        h2 {
-            font-size: 2rem;
-        }
-
-        p {
-            font-size: 1rem;
-            margin-bottom: 10px;
-        }
-
-        .btn-abrir {
-            margin-bottom: 50px;
-            padding: 8px 16px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        padding: 5px;
-
-        h2 {
-            font-size: 1.5rem;
-        }
-
-        p {
-            font-size: 0.9rem;
-        }
-
-        .btn-abrir {
-            padding: 6px 12px;
-        }
-    }
 }
 
 .entrar {
