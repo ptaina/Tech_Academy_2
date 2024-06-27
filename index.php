@@ -26,29 +26,45 @@
     })();
 
     window.onload = function () {
-
-      var supportLink = document.getElementById('supportLink');
-      supportLink.addEventListener('click', function (event) {
+    var supportLink = document.getElementById('supportLink');
+    supportLink.addEventListener('click', function (event) {
         event.preventDefault();
         var myModal = new bootstrap.Modal(document.getElementById('supportModal'));
         myModal.show();
-      });
+    });
 
-
-      document.getElementById('supportForm').addEventListener('submit', function (event) {
+    document.getElementById('supportForm').addEventListener('submit', function (event) {
         event.preventDefault();
-        emailjs.sendForm('service_f49h6ts', 'template_at6opvq', this)
-          .then(function (response) {
-            console.log('SUCCESS!', response.status, response.text);
-            alert('Mensagem enviada com sucesso!');
-            var myModal = bootstrap.Modal.getInstance(document.getElementById('supportModal'));
-            myModal.hide();
-          }, function (error) {
-            console.log('FAILED...', error);
+
+        var formData = {
+            email: document.getElementById('user-email').value,
+            message: document.getElementById('problem-description').value
+        };
+
+        fetch('api/suporte.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                alert(data.message);
+                var myModal = bootstrap.Modal.getInstance(document.getElementById('supportModal'));
+                myModal.hide();
+            } else {
+                alert(data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
             alert('O envio da mensagem falhou. Por favor, tente novamente mais tarde.');
-          });
-      });
-    }
+        });
+    });
+}
+
   </script>
 </head>
 
